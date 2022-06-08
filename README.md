@@ -37,7 +37,7 @@ $$
 2*AirChevauchement / AirTotal
 $$
 
-<img title="" src="file:///./Ressources/prez/diceCoeff.png" alt="" data-align="center">
+<img title="" src="./Ressources/prez/diceCoeff.png" alt="" data-align="center">
 
 ### le score IoU ou "l'intersection de l'union"
 
@@ -45,13 +45,13 @@ $$
 AirIntersection / AirUnion
 $$
 
-<img title="" src="file:///./Ressources/prez/scoreIoU.png" alt="" data-align="center">
+<img title="" src="./Ressources/prez/scoreIoU.png" alt="" data-align="center">
 
-<img title="" src="file:///./Ressources/prez/formulaIoU.png" alt="" data-align="center">
+<img title="" src="./Ressources/prez/formulaIoU.png" alt="" data-align="center">
 
 ## La méthode de recherche du modèle qui sera utilisé :
 
-<img title="" src="file:///./Ressources/prez/methodo.svg" alt="" data-align="center">
+<img title="" src="./Ressources/prez/methodo.svg" alt="" data-align="center">
 
 *Pourquoi U-Net ?*
 Déjà il faut prendre en compte que le sujet se porte sur la **Segmentation sémantique**
@@ -64,27 +64,27 @@ Il est aussi très utilisé dans les diagnostiques médicaux, la cartographie sa
 
 ### Commençons par un tester un model simple, l'UnetMini
 
-<img title="" src="file:///./Ressources/prez/UNetMini.svg" alt="" data-align="center">
+<img title="" src="./Ressources/prez/UNetMini.svg" alt="" data-align="center">
 
 Déjà nous obtenons des résultats plutôt satisfaisants:
 
-<img title="" src="file:///./Ressources/prez/unetMini.png" alt="" data-align="center">
+<img title="" src="./Ressources/prez/unetMini.png" alt="" data-align="center">
 
 ### Deuxième étape, le model U-NET classique :
 
-<img title="" src="file:///./Ressources/prez/UNet.svg" alt="" data-align="center">
+<img title="" src="./Ressources/prez/UNet.svg" alt="" data-align="center">
 
 Les résultats sont meilleurs et en beaucoup moins de temps :D
 
-<img title="" src="file:///./Ressources/prez/unet.png" alt="" data-align="center">
+<img title="" src="./Ressources/prez/unet.png" alt="" data-align="center">
 
 ### Enfin, VGG16 et U-Net
 
-<img title="" src="file:///./Ressources/prez/VggUNet.svg" alt="" data-align="center">
+<img title="" src="./Ressources/prez/VggUNet.svg" alt="" data-align="center">
 
 En voici les résultats très encourageants:
 
-<img title="" src="file:///./Ressources/prez/vggunet.png" alt="" data-align="center">
+<img title="" src="./Ressources/prez/vggunet.png" alt="" data-align="center">
 
 ### Synthèse des tests sur les 3 Models
 
@@ -109,7 +109,7 @@ En pratique, le comportement de la divergence de KL est **très similaire à cel
 Elle calcule la quantité d'informations perdues (en termes de bits) 
 si la distribution de probabilité prédite est utilisée pour se rapprocher de la distribution de probabilité cible souhaitée.
 
-<img title="" src="file:///./Ressources/prez/modloss.png" alt="" data-align="center">
+<img title="" src="./Ressources/prez/modloss.png" alt="" data-align="center">
 
 ## Test de la librairie "Albumentations"
 
@@ -120,15 +120,15 @@ Voici le résultat de quelque un de nos testes :
 
 L'effet miroir verticale :
 
-<img title="" src="file:///./Ressources/prez/flip.png" alt="" data-align="center">
+<img title="" src="./Ressources/prez/flip.png" alt="" data-align="center">
 
 Ajout de brouillard :
 
-<img title="" src="file:///./Ressources/prez/fog.png" alt="" data-align="center">
+<img title="" src="./Ressources/prez/fog.png" alt="" data-align="center">
 
 Simulation de pluie :
 
-<img title="" src="file:///./Ressources/prez/rain.png" alt="" data-align="center">
+<img title="" src="./Ressources/prez/rain.png" alt="" data-align="center">
 
 Il est à noter que ces tests ont été réalisés avec un ajout de **10%** d'images générées selon les méthodes désignées.
 
@@ -137,13 +137,13 @@ Il est à noter que ces tests ont été réalisés avec un ajout de **10%** d'im
 Dernière expérimentation avec l'ensemble des paramètres optimaux
 Ici nous avons un entrainement du Model VGG U-Net, <br>avec une fonction de perte "divergence de Kullback-Leibler" <br>et un ajout de 10% d'images générées par simulation de pluie.
 
-<img title="" src="file:///./Ressources/prez/optimalIoU.png" alt="" data-align="center">
+<img title="" src="./Ressources/prez/optimalIoU.png" alt="" data-align="center">
 
 # 2. Synthèse des résultats
 
 Ci-dessous l'évolution des scores d'IoU pour les 3 Models testés.
 
-<img title="" src="file:///./Ressources/prez/iouDes3ModelsTests.png" alt="" data-align="center">
+<img title="" src="./Ressources/prez/iouDes3ModelsTests.png" alt="" data-align="center">
 
 Ici, toujours l'évolution de du score IoU au cours de l'entrainement, pour le test de 2 fonctions de pertes. 
 La Divergence KL est réputée meilleur pour les la classification de classes multiple, dense... 
@@ -151,7 +151,7 @@ Ce qui est adéquat pour notre problème de segmentation d'image qui est dense d
 où c'est chaque pixel qui doit être classifié parmi nos 8 classes! 
 Cela se vérifie bien dans cette expérience.
 
-<img title="" src="file:///./Ressources/prez/iouChangementLoss.png" alt="" data-align="center">
+<img title="" src="./Ressources/prez/iouChangementLoss.png" alt="" data-align="center">
 
 Les augmentations ne semblent pas apporter beaucoup...
 Plusieurs hypothèses peuvent être prises en compte:
@@ -160,14 +160,14 @@ Plusieurs hypothèses peuvent être prises en compte:
    De plus elles proviennent uniquement d'Allemagne, donc l'effet miroir manque d’intérêt. En effet en Angleterre ou le sens de circulation est inversé, nous aurions peu être plus de succès? 
 2. Qui dit, plus d'images, dit plus d'information à traiter. Peut-être qu'ici le paramètre "patience" aurait pu être augmenté et ainsi permettre d'entrainer bien plus d'Epochs?
 
-<img title="" src="file:///./Ressources/prez/comparaisonAugment.png" alt="" data-align="center">
+<img title="" src="./Ressources/prez/comparaisonAugment.png" alt="" data-align="center">
 
 Nous voyons, en conclusion, que les travaux d'optimisations ont portés leurs fruits.
 Nous avons une précision équivalente pour un temps d'entrainement plus long, 
 mais nous gagnons **3%** au score IoU ce qui est une bonne chose dans le sens où cette métrique est mieux adaptée à notre problème.
 De plus, avec de nouvelles images, plus diversifiées en pays et en météo, nous pourrions espérer encore améliorer notre Model !
 
-<img title="" src="file:///./Ressources/prez/modelBasVsModelOpti.png" alt="" data-align="center">
+<img title="" src="./Ressources/prez/modelBasVsModelOpti.png" alt="" data-align="center">
 
 En Tableau :
 
@@ -186,19 +186,19 @@ En images :
 
 Une prédiction avec un Vgg U-Net de base :
 
-<img title="" src="file:///./Ressources/prez/maskModelBase.png" alt="" data-align="center">
+<img title="" src="./Ressources/prez/maskModelBase.png" alt="" data-align="center">
 
 Le masque donné :
 
-<img title="" src="file:///./Ressources/prez/maskTruth.png" alt="" data-align="center">
+<img title="" src="./Ressources/prez/maskTruth.png" alt="" data-align="center">
 
 Et pout conclure, la prédiction avec le Model optimisé :
 
-<img title="" src="file:///./Ressources/prez/maskModelOpti.png" alt="" data-align="center">
+<img title="" src="./Ressources/prez/maskModelOpti.png" alt="" data-align="center">
 
 # 3. La mise en production
 
-<img src="file:///./Ressources/prez/Mise%20en%20production.svg" title="" alt="" data-align="center">
+<img src="./Ressources/prez/Mise%20en%20production.svg" title="" alt="" data-align="center">
 
 Flask est une librairie, dite "côté backend", c'est à dire côté serveur.
 Celle-ci permet de générer des pages encodées en HTML/JavaScript/CSS à partir de "template" 
@@ -325,19 +325,19 @@ Voici les étapes permettant de mettre "en production" cette Web App:
 
 1. Créer un service "Web App" Pour ceci le moteur de recherche intégré nous aidera à la trouver
 
-<img src="file:///./Ressources/prez/rechercheWebApp.png" title="" alt="" data-align="center">
+<img src="./Ressources/prez/rechercheWebApp.png" title="" alt="" data-align="center">
 
 2. Paramétrer la création du service, en prenant soin de sélectionner "Free F1" dans le champ "sku and size":
    
-   <img src="file:///./Ressources/prez/Create%20Web%20App%20-%20Microsoft%20Azure.png" title="" alt="" data-align="center">
+   <img src="./Ressources/prez/Create%20Web%20App%20-%20Microsoft%20Azure.png" title="" alt="" data-align="center">
 
 3. Voici les étapes permettant d'utiliser Git avec notre Web App, afin de la publier:
    
-   <img src="file:///./Ressources/prez/webapp%20Git.png" title="" alt="" data-align="center">
+   <img src="./Ressources/prez/webapp%20Git.png" title="" alt="" data-align="center">
    
-   <img src="file:///./Ressources/prez/webapp%20Git1.png" title="" alt="" data-align="center">
+   <img src="./Ressources/prez/webapp%20Git1.png" title="" alt="" data-align="center">
    
-   <img src="file:///./Ressources/prez/webapp%20Git2.png" title="" alt="" data-align="center">
+   <img src="./Ressources/prez/webapp%20Git2.png" title="" alt="" data-align="center">
    
    Cette dernière étape, sur le portail Azure, montre comment récupérer les identifiants (2), quand ils seront demandés par l'interface de connexion aux services de GitHub
 
